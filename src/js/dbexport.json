@@ -1,0 +1,614 @@
+{
+  "global" : {
+    "flag" : {
+      "carryFlag" : true,
+      "missionFlag" : true
+    },
+    "missionList" : {
+      "mission1" : {
+        "enable" : false,
+        "missionname" : "測試用任務A",
+        "text" : "測試A"
+      },
+      "mission2" : {
+        "enable" : false,
+        "missionname" : "測試用任務B",
+        "text" : "測試B"
+      },
+      "mission3" : {
+        "enable" : false,
+        "missionname" : "測試用任務C",
+        "text" : "測試C"
+      }
+    },
+    "storyList" : {
+      "layer1" : {
+        "L1S1" : {
+          "result" : [ "L1S1r1", "L1S1r2" ],
+          "selection" : [ "回答他：「你說的這詩警官，她漂亮嗎？」", "回答他：「醒醒，她才不是你老婆！」" ],
+          "storyname" : "瘋子開膛手",
+          "text" : "夜深了，你在溪邊野營，準備睡飽了隔天再上路。就在這時，一位男子從樹叢旁走出來，問道：『請…請問一下，你有看到過詩警官嗎？我是她老公，我跟她走散了…』"
+        },
+        "L1S1r1" : {
+          "result" : [ "dying", "showSkip" ],
+          "selection" : [ "dying", "離開" ],
+          "storyname" : "瘋子開膛手",
+          "text" : "『讓我來給你好好講講她有多好…』，這奇怪的男子要你帶著他進帳篷交流交流，你不疑有他，領著路走進帳篷…@忽然，你的身後猛然有股殺氣，措不及防的你被這名男子壓制在地，@『哈哈~大家都叫我瘋子開膛手，今晚，我想來點生肝切片佐清蒸脆腸~~』@臨死前的你想講些什麼，但也沒氣再說出口了…「瘋…膛…若有來世…再信你…我就是狗…」"
+        },
+        "L1S1r2" : {
+          "result" : [ "C6", "showSkip" ],
+          "selection" : [ "C6", "離開" ],
+          "storyname" : "瘋子開膛手",
+          "text" : "男子表情逐漸扭曲起來，而你也早有心裡準備，清楚這時間出現在這荒郊野嶺的人一定有問題。@男子拿出小刀，衝向你的懷中，還好拿出裝備的你格擋下了這次攻擊。一來一往下，你已經與他對峙了十幾分鐘，身上皮肉傷無數，可能再沒多久就要撐不住了。@『嘎歐~』突然，山谷傳來一聲吼聲，男子行動忽然僵硬，面色潮紅，過沒幾分鐘，一位警官出現了。@『這麼喜歡被我抓，為此不惜幹盡壞事是吧？可以好好去讀書嗎？』男子心滿意足的被逮捕，而你獲得了那位警官隨手施捨的慰問金。"
+        },
+        "L1S2" : {
+          "result" : [ "L1S2r1", "L1S2r2" ],
+          "selection" : [ "將女孩擋下來，讓方丈可以逃走", "將方丈壓制住" ],
+          "storyname" : "夜半魔音",
+          "text" : "深夜中，你在路上遇到一個全力奔跑著的方丈，後方追來了幾位年輕的女孩子，方丈邊跑邊念著類似佛號的東西『fa大幫幫…油禿禿幫幫…大家都幫幫…』，這時，你要幫助哪一方呢？"
+        },
+        "L1S2r1" : {
+          "result" : [ "panadol", "showSkip" ],
+          "selection" : [ "panadol", "離開" ],
+          "storyname" : "夜半魔音",
+          "text" : "被你擋在身後的方丈非但沒有繼續逃跑，而是遞給你一盒藥，@『這是我特製的藥，可以抵擋住她們言語的魔力，否則她們三句就讓你暈厥，五句以上就會讓人無法自拔。』方丈帶著詭異的笑容離開了，你吃下了藥，開始享受著女孩們的甜言蜜語。"
+        },
+        "L1S2r2" : {
+          "result" : [ "H4", "showSkip" ],
+          "selection" : [ "H4", "離開" ],
+          "storyname" : "夜半魔音",
+          "text" : "女孩們撲倒了方丈，方丈求饒道：『月曦姐姐、阿凜妹妹、麋葉妹妹，對我偷襲，這好嗎？這不好！』@一旁女孩張著水汪的眼睛說道：『可是你說好要當小麋葉的玩具了~』另一個女孩在方丈耳邊吹著氣，輕聲說：『TG哥哥~好~色~喔~』@方丈口吐一口老血…阿，仔細一看原來是鼻血。@在她們的魅惑聲音下，方丈的反抗逐漸微弱，直至喪失理智，如同梅菲斯特的牧群一般，口中反覆的念著『好色喔…好扯喔…』，蹣跚的走在路上…@雖然你是促成這個悲劇的元兇，但因她們的魅惑魔法目標不是你，你能安心享受著她們的聲音，人生充滿希望。"
+        },
+        "L1S3" : {
+          "result" : [ "L1S3r1", "L1S3r2", "L1S3r3" ],
+          "selection" : [ "邊走出樹叢邊背出許多車牌號碼", "邊走出樹叢邊展示家中幹員的合影", "好耶，吃瓜看戲" ],
+          "storyname" : "野外械鬥",
+          "text" : "叢林中傳出了打鬥的聲響，出於好奇，你藏身於樹叢旁觀察聲響的來源。@『我們紫華團，才是城市的核心！』頭上包著紫色包巾的男人，自稱是紫色軍團的月落隊長，慷慨激昂的吼道。@『我們流星街友，個個都是精英，每個月七單是很正常的事情，放馬過來！』這些精英們外表高強，細看卻發現有些人髮量稀疏，或是面色不佳，可能是肝功能異常，甚至有些人有類似吸毒的戒斷症狀，渾身發癢時就從口袋拎出類似石頭的物體往嘴塞。@面對這一觸即發的戰鬥現場，你的選擇是？"
+        },
+        "L1S3r1" : {
+          "result" : [ "brochure", "showSkip" ],
+          "selection" : [ "brochure", "離開" ],
+          "storyname" : "野外械鬥",
+          "text" : "『是誰！喔~好耶老兄，看來你是認同我們理念的。好！今天有新人，我們就不跟你們計較了啊！@來~這是我們的語錄本，請每日照三餐背誦，七七四十九天後找我考試，考過就能正式成為我們的一員囉！』"
+        },
+        "L1S3r2" : {
+          "result" : [ "vrglasses", "showSkip" ],
+          "selection" : [ "vrglasses", "離開" ],
+          "storyname" : "野外械鬥",
+          "text" : "『有刺客！嗯？小伙子，想加入我們？哼！就這點幹員，我們人人都拿的出來，回去再好好教育你，我們今天就先收隊吧！@告訴你，你要超越自己的極限，捨棄一切身外之物…』「包含頭髮？」『…閉嘴！我們對方舟的愛，豈是區區頭髮可以比較的，拿去，這是我們練功的用具。』"
+        },
+        "L1S3r3" : {
+          "result" : [ "C10", "showSkip" ],
+          "selection" : [ "C10", "離開" ],
+          "storyname" : "野外械鬥",
+          "text" : "兩方都亮出自己的武器，紫華團人人都有把槍砲，看起來火力很足，但是搭配著一些男人的女裝造型，總令人感到嘔心…@另一邊的街友們做法就比較豪邁，直接拿出口袋中的源石亂扔，彷彿這樣就能夠讓對方感染源石病…@戰鬥之中死傷無數，兩敗俱傷，最後雙方只好暫時和解撤退，你趁著他們不注意，瘋狂搜刮地上的源石，爽賺一波。"
+        },
+        "L1S4" : {
+          "result" : [ "R$L1S4r1$0.1$L1S4r2$0.9", "L1S4r3" ],
+          "selection" : [ "花費10源石粒，賭下去", "不賭，離開" ],
+          "storyname" : "豪賭",
+          "text" : "接近了番車城，你遇到了一位富豪，大家都稱他為Kimi，據說番車城的城主，也是他支持著的。@最近這位富豪閒的發慌，到處與人對賭，只要能十抽中獎，他就會送你很多源石粒。@在你懷疑之際，有位少女站了出來，說自己超勇的，超會抽的啦！@「哼…笑死，哪有可能隨隨便便就ㄔ…蛤？？！！真的抽到了？！」@你看著這自稱NR的少女抱走一袋的源石，心裡很不是滋味…來！做出你的選擇吧！"
+        },
+        "L1S4r1" : {
+          "result" : [ "C10", "showSkip" ],
+          "selection" : [ "C20", "離開" ],
+          "storyname" : "豪賭",
+          "text" : "聽到包包中嚶嚶作響，你知道你勝券在握。跳出來的角色也如你預期，你快樂的抱著一袋源石粒離開。"
+        },
+        "L1S4r2" : {
+          "result" : [ "C-10", "showSkip" ],
+          "selection" : [ "C-10", "離開" ],
+          "storyname" : "豪賭",
+          "text" : "看到滿屏的紫光，你的臉色比螢幕還紫，沒事，非洲才是常態，歐洲都是業債。"
+        },
+        "L1S4r3" : {
+          "result" : [ "showSkip" ],
+          "selection" : [ "離開" ],
+          "storyname" : "豪賭",
+          "text" : "唉，據說城主的代抽非常靈驗，等找到了城主再來大抽特抽吧。"
+        },
+        "L1S5" : {
+          "result" : [ "L1S5r1", "L1S5r4", "L1S5r4" ],
+          "selection" : [ "轉大人", "評鑑大濕", "以上兩個都要" ],
+          "storyname" : "駕訓班",
+          "text" : "即將進入番車城，城中的居民都一定會開車，沒有駕照會非常麻煩。@現在，開始進行駕訓筆試。@@請問：想要看色色的圖片，需要獲得哪個身分組？"
+        },
+        "L1S5r1" : {
+          "result" : [ "L1S5r2", "L1S5r5", "L1S5r5" ],
+          "selection" : [ "知識共享II", "知識限縮", "箭刃抵禦" ],
+          "storyname" : "駕訓班",
+          "text" : "請問：大家都是rua牛活動中，下列哪個詞條並未出現？"
+        },
+        "L1S5r2" : {
+          "result" : [ "L1S5r6", "L1S5r3", "L1S5r6" ],
+          "selection" : [ "3位", "4位", "5位" ],
+          "storyname" : "駕訓班",
+          "text" : "請問：目前城中擁有完整管制權的人共有幾位？"
+        },
+        "L1S5r3" : {
+          "result" : [ "licenseA", "spraypaint", "showSkip" ],
+          "selection" : [ "licenseA", "spraypaint", "離開" ],
+          "storyname" : "駕訓班",
+          "text" : "滿分的考卷，只是當個安全駕駛人的第一步，請遵守交通規則，行車平安。"
+        },
+        "L1S5r4" : {
+          "result" : [ "licenseD", "showSkip" ],
+          "selection" : [ "licenseD", "離開" ],
+          "storyname" : "駕訓班",
+          "text" : "看在你是新手的份上，還是給了你一份駕照，需要多熟悉城內的環境，多多練習駕車。"
+        },
+        "L1S5r5" : {
+          "result" : [ "licenseC", "showSkip" ],
+          "selection" : [ "licenseC", "離開" ],
+          "storyname" : "駕訓班",
+          "text" : "涉世未深，雖然你已逐漸熟悉城內，但仍需多加努力。"
+        },
+        "L1S5r6" : {
+          "result" : [ "licenseB", "showSkip" ],
+          "selection" : [ "licenseB", "離開" ],
+          "storyname" : "駕訓班",
+          "text" : "棋差一著，番車城還有許多潛規則尚未被你發掘，行車需要多注意。"
+        }
+      },
+      "layer2" : {
+        "L2S1" : {
+          "result" : [ "L2S1r1", "L2S1r2" ],
+          "selection" : [ "以一己之力驅離其他怪人，保護女孩免受迫害。", "嘲諷女孩：「爽啦矮子！」" ],
+          "storyname" : "面對火災，我們無計可施",
+          "text" : "『你…你們不要再吵了…』，路邊的暗巷傳出女孩微弱的呼救聲，只見一位外表看似即將成年，身高卻低於國小的女孩，被一群大漢包圍著。這時的你，該怎麼做呢？"
+        },
+        "L2S1r1" : {
+          "result" : [ "H4", "covid153", "showSkip" ],
+          "selection" : [ "H4", "covid153", "離開" ],
+          "storyname" : "面對火災，我們無計可施",
+          "text" : "『謝謝您的大恩大德，我…我無以回報，只能用我的歌聲，開始現場演唱！』女孩從口袋中拿出麥克風，悠悠地唱著一首首的歌，你聽的如癡如醉，甚至失去了探險所需的理性思維。"
+        },
+        "L2S1r2" : {
+          "result" : [ "E$rand$L2S1r3" ],
+          "selection" : [ "遭遇一場特殊的戰鬥" ],
+          "storyname" : "面對火災，我們無計可施",
+          "text" : "『『我們是拜火教徒，您也信教嗎？』』，大漢們轉而向你包圍了過來，小女孩站了起來，面露凶光，向你發出挑戰，『來接受我們的壓力測試吧！』"
+        },
+        "L2S1r3" : {
+          "result" : [ "H4", "C10", "torch", "ticket", "showSkip" ],
+          "selection" : [ "H4", "C10", "torch", "ticket", "離開" ],
+          "storyname" : "面對火災，我們無計可施",
+          "text" : "女孩見你輕鬆地跨越障礙，眼眶泛紅地說：『*番車城粗口*，我的詛咒會一直跟著你的…給我記住！』"
+        },
+        "L2S2" : {
+          "result" : [ "L2S2r1", "L2S2r2", "L2S2r3" ],
+          "selection" : [ "「請問一下，這個城市的管制方式是什麼呢？」", "「請問城市旁的最新關卡，有什麼攻略嗎？」", "「這個地方要怎麼樣才不會犯規？」" ],
+          "storyname" : "幫助？",
+          "text" : "進入了城市，城中萬紫千紅，形形色色的人們穿梭於各個建築之間，你徹底迷了路。@在路上，你遇到一個狸貓耳朵的人，他自稱是這座城市的擁有者，並遞上名片…@「柚子…？」你的眼神中充斥著懷疑，但是迷路的你不得不向他詢問一些必要的資訊。"
+        },
+        "L2S2r1" : {
+          "result" : [ "map", "showSkip" ],
+          "selection" : [ "map", "離開" ],
+          "storyname" : "幫助？",
+          "text" : "『不知道誒，其實我也不熟~如果沒有其他要問的，我先走囉~』，你眼睜睜看著這個自稱是城市擁有者的人離開，他走進一間旅館，卻被店員踢了出來，『這裡不是便利超商，你走錯了！』@「…原來，他也是迷路的人…」"
+        },
+        "L2S2r2" : {
+          "result" : [ "strategy", "showSkip" ],
+          "selection" : [ "strategy", "離開" ],
+          "storyname" : "幫助？",
+          "text" : "『這你就問對人了，我們去旁邊的酒店坐坐，我講給你聽！』@柚子一到店，所有喝酒的人就看著他笑，有的笑道『柚子，你又出新廢片啦！』他不回話，對櫃檯說『抽八個凱爹，要一個紅蒂蒂』便排出幾個十抽卷。他們又故意高聲嚷道『你一定又偷嗆觀眾了！』柚子睜大雙眼道『你怎麼這樣憑空污人清白』『什麼清白？我前天見你噴人沒小羊還要抄你的攻略，被城市的人們吊著噴呢！』柚子漲紅著臉，爭辯著『教人的事不能算噴，直播…直播很辛苦的！』接著便是些難懂的話，什麼『安比爾不用練』、什麼『推王根本不會跳』之類，引得眾人哄笑起來，店內外充滿著快活的空氣。"
+        },
+        "L2S2r3" : {
+          "result" : [ "rickroll", "showSkip" ],
+          "selection" : [ "rickroll", "離開" ],
+          "storyname" : "幫助？",
+          "text" : "『哎呀，犯規這種事不要問我，我這麼純潔清白的人，絕對不會幹什麼殺人放火的事…』，話還沒說完，柚子腳下的柏油路瞬間拉開了一道拉門，門中伸出一隻機器手臂，將他扯進路面下。@你嚇得驚慌失措，漫無目的奔跑在路上，不敢多說一句話，深怕下一個被抓走的就是自己。跑著跑著，你路過城中最高的大樓，定睛一瞧，剛剛被抓走的柚子，竟然就在樓頂的露天表演台被五花大綁。@『大家好~我是今晚的演唱會主持琴雪，今天的來賓，是我們許久不見的柚子先生！請問今天想要帶來什麼歌曲呢？』柚子對著麥克風嘶吼著：『我…我再也不敢踩樂高了啊啊啊啊！！』"
+        },
+        "L2S3" : {
+          "result" : [ "L2S3r1", "L2S3r2" ],
+          "selection" : [ "「你的好意我星凜了，不過還是找新郎就好」", "「需要新郎嗎？我也會疼會養喔~」" ],
+          "storyname" : "婚約風雲",
+          "text" : "你來到了城中的鬧區，看到有一整條街全辦著婚宴。「咕嚕~~」，唉，就算是探險家中的精英，也無法捱過沒有晚餐的夜晚，你決定混進一場婚宴中飽餐一頓。@混入了街上最大的一場宴會，你用餐到一半，宴會發生了意外，『新郎…新郎他逃走了！』宴會主持人此時彷彿早就認識你，直直向你走來並遞出麥克風，『請問探險家願意幫我們找到新郎嗎？我們願意將新娘許配給你喔！』你一邊心想這是什麼新型仙人跳，一邊思考著回答。"
+        },
+        "L2S3r1" : {
+          "result" : [ "C6", "businesscard", "showSkip" ],
+          "selection" : [ "C6", "businesscard", "離開" ],
+          "storyname" : "婚約風雲",
+          "text" : "明察秋毫的你早就明白了該找到誰，主持人遞出一張名片，並告訴你，『這裡是所有渣男最愛去的地方，只要找到他們門管，對方問什麼都回『幫幫』，就可以進去了。』"
+        },
+        "L2S3r2" : {
+          "result" : [ "C-8", "collar", "showSkip" ],
+          "selection" : [ "C-8", "collar", "離開" ],
+          "storyname" : "婚約風雲",
+          "text" : "接受了提議後，更不可思議的還在後頭…整街的婚宴都有人願意與你結婚。漸漸的，每個人都與你有親緣關係，你同時擔任一個爺爺，也能成為一個兒子，原來這條街就是俗稱的「亂倫街」。@一個禮拜後，街上的每戶人家都與你有人與人之間的連結了，『唉，又是個渣男…給我過來！』地方的警官找上了你，為你銬上電子項圈。"
+        },
+        "L2S4" : {
+          "result" : [ "L2S4r1", "L2S4r2", "L2S4r3", "L2S4r4" ],
+          "selection" : [ "最禿的那位大師", "最非的那位大師", "最年輕的那位大師", "最色的那位大師" ],
+          "storyname" : "少林武功好耶",
+          "text" : "城中有間與周圍格格不如的寺院，聽說天天都在招收徒弟，你推門邁步進去，便受到一堆大師的熱情邀約。@仔細觀察過他們以及他們的學生之後，你決定要加入其中一個大師的門下接受訓練，要選擇誰呢？"
+        },
+        "L2S4r1" : {
+          "result" : [ "tetrapods", "showSkip" ],
+          "selection" : [ "tetrapods", "離開" ],
+          "storyname" : "少林武功好耶",
+          "text" : "這位大師操著一口流利的日文，鞭策著他的學生熟悉術師們的極限。鞭策方式也獨樹一格，每當學生撐不下去時，大師就會在她耳側說：『你打過了，我就穿女裝給你看喔~』，而後學生就會持續亢奮一段時間，看來是一位很愛偽娘的學生。@你向這位大師報名拜師學藝，但他卻對你的性別不是很滿意，丟給你一個奇怪的石頭，就催著你出寺修行了。"
+        },
+        "L2S4r2" : {
+          "result" : [ "necklace", "showSkip" ],
+          "selection" : [ "necklace", "離開" ],
+          "storyname" : "少林武功好耶",
+          "text" : "這位大師的外表十分奇特，身體有一些部分是由機械組成的，經你詢問後發現，他的內臟也全都是機械。@「將器官換成機械式的有什麼好處啊？」你出於好奇的問道，@他回答道『~~這樣就可以把他們賣了來湊錢抽限定啦~~』，他滔滔不絕的繼續說『~~你知道嗎？明日方舟就是款要拼命凹的遊戲，要凹能天使的天賦、要凹爆擊、要凹暈眩，甚至還要連凹四個限定池！！選擇跟著我，你的未來注定會是一條坎坷的路，你確定嗎？~~』@你堅定的眼神讓他放心的把一條齒輪護符交給了你，希望未來的你可以不要比他還非。"
+        },
+        "L2S4r3" : {
+          "result" : [ "stylus", "showSkip" ],
+          "selection" : [ "stylus", "離開" ],
+          "storyname" : "少林武功好耶",
+          "text" : "身為年紀最小的大師，訓斥學生卻絕不比其他大師遜色，@『SC，今天份的作業呢？給我交上來！』緊接就是一聲清脆的鞭聲，@「果然是攻略組出身的大師，訓練的品質果然很高，就決定跟隨這大師的腳步了！」你向她詢問了加入的條件，她表示條件不多，只要你每次活動都拿得出重裝通關紀錄就好，『喔對，還有一點，不要學我這該死的徒弟，幹員等級都不練成整數。』@你拿到了大師的信物…是一隻電繪筆，原來當徒弟還要順便幫忙打雜，這是無可避免的。"
+        },
+        "L2S4r4" : {
+          "result" : [ "basementkey", "showSkip" ],
+          "selection" : [ "basementkey", "離開" ],
+          "storyname" : "少林武功好耶",
+          "text" : "『你是蘿莉嗎？你不是，那你喜歡蘿莉嗎？喜歡嗎？喜歡嗎？』大師一見你來訪就開始瘋狂跳針，讓你無所適從。@經其他大師的口中得知，他是一位無可救藥的蘿莉控，曾因此七進七出監獄，是寺院中少見的破戒僧。@你向他說明了來意，他回答道，『喔~可以啊，我們可以好好聊聊先鋒們的使用技巧，以及關卡的思路…』，@「沒想到，雖然你是變態，但人還挺好的嘛…」你感嘆的說著，@『今夜就留在我房間吧！我還想多推薦你更多蘿莉本，甚至我還有個暗藏的地下室有現貨…』「收回前言，我還是報警好了！」@你迅速報了警，警方出動了霹靂小組迅速將他逮捕歸案，@在他被押走前，他給了你一把鑰匙，@『這是那個地下室的鑰匙，裡面的秘笈雖然封面都是蘿莉，但其實都是戰鬥紀錄與我畢生的經驗。@雖然你報案了，但我不會忘記你繼承我的志向的承諾。加油！我看好你！』@…雖然是無可救藥的變態，但真的是好人呢。"
+        },
+        "L2S5" : {
+          "result" : [ "L2S5r1", "L2S5r2", "L2S5r3" ],
+          "selection" : [ "從整合運動擄獲來的獵犬組長", "兔子與貓合成的可愛動物", "一隻茶色的鯊魚" ],
+          "storyname" : "寵物",
+          "text" : "探險了許久，即將進入城市最熱鬧的核心，看到城內人都成雙成對的，凸顯自己形單影隻的悲哀。@你駐足在一家寵物店前，想買一隻寵物來陪伴自己乏味的探險生活。進到店內，店員向你推薦了許多奇珍異獸，要選擇哪一隻呢？"
+        },
+        "L2S5r1" : {
+          "storyname" : "寵物",
+          "text" : "購買了獵犬組長後，店員附給你一個狗繩，因為組長飆起車來誰也追不上，只要天色越暗，速度就越快。@「…不如把牠當坐騎算了」，你心想。",
+          "selection" : ["leash", "離開"],
+          "result" : ["leash", "showSkip"]
+        },
+        "L2S5r2" : {
+          "storyname" : "寵物",
+          "text" : "兔貓一出籠子就找你討抱抱，@寵物的擁抱，已經是你在這城中不可多得的溫暖了，人生頓時充滿希望，又有前進的動力了！",
+          "selection" : ["H5", "離開"],
+          "result" : ["H5", "showSkip"]
+        },
+        "L2S5r3" : {
+          "storyname" : "寵物",
+          "text" : "這隻寵物說話直來直往，與城內某位貓耳警官是同房共枕的關係，他向你透露了一些關於城市的秘密。",
+          "selection" : ["clueA", "離開"],
+          "result" : ["clueA", "showSkip"]
+        }
+      },
+      "layer3" : {
+        "L3S1" : {
+          "storyname" : "測試故事3-1",
+          "text" : "測試",
+          "selection" : ["離開"],
+          "result" : ["showSkip"]
+        },
+        "L3S2" : {
+          "storyname" : "測試故事3-2",
+          "text" : "測試",
+          "selection" : ["離開"],
+          "result" : ["showSkip"]
+        },
+        "L3S3" : {
+          "storyname" : "測試故事3-3",
+          "text" : "測試",
+          "selection" : ["離開"],
+          "result" : ["showSkip"]
+        },
+        "L3S4" : {
+          "storyname" : "測試故事3-4",
+          "text" : "測試",
+          "selection" : ["離開"],
+          "result" : ["showSkip"]
+        },
+        "L3S5" : {
+          "storyname" : "測試故事3-5",
+          "text" : "測試",
+          "selection" : ["離開"],
+          "result" : ["showSkip"]
+        }
+      }
+    }
+  },
+  "users" : {
+    "UVY1q9yIBTb9BWFEj7KorJ1MS6i2" : {
+      "fetch" : {
+        "box" : {
+          "Ansel" : 1,
+          "Exusiai" : 1,
+          "Magallan" : 2
+        },
+        "identifier" : "test",
+        "score" : {
+          "escape" : 5,
+          "fightcount" : 0,
+          "finish" : 0,
+          "total" : 19
+        },
+        "state" : {
+          "coin" : 30,
+          "fightID" : "ea1fcdf49af3c0155f2df7739fe16dc353cc7e7c",
+          "hope" : 5,
+          "last_phase" : "Lobby",
+          "layer" : 1,
+          "phase" : "Phase"
+        }
+      }
+    },
+    "fjj6Lwj6DpQIgx4uezPqDRwmjUa2" : {
+      "fetch" : {
+        "identifier" : "德諾索"
+      }
+    },
+    "sZplSNYsnGaVn4JT5PjH91OtPC63" : {
+      "backup" : {
+        "fight" : {
+          "45fb33e53c545a84e9813095057256f224eade8f" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "stylus", "dying" ],
+            "time" : 1632804650665,
+            "totalscore" : 2
+          },
+          "4fecddb9ae7c55b4b158507d68c2c60b2b8481fd" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "panadol", "licenseD", "chocolate" ],
+            "time" : 1632804332486,
+            "totalscore" : 2
+          },
+          "54014a160e4d778db2079b4b49d63a3feaf50e34" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "chocolate", "licenseA", "panadol", "dying" ],
+            "time" : 1632801572938,
+            "totalscore" : 2
+          },
+          "7894a2d9600ff5ec7fd75f4f1a0e6841a426d416" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "panadol", "licenseD", "licenseA" ],
+            "time" : 1632801710079,
+            "totalscore" : 2
+          },
+          "83ce16cc12196526d1ec55b78a5e07cc78f78ef2" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "licenseC", "dying" ],
+            "time" : 1632804849642,
+            "totalscore" : 2
+          },
+          "acfb7639d86000e2a1055450f3a664aaa7c64d92" : {
+            "extremecount" : 1,
+            "fightcount" : 2,
+            "item" : [ "brochure", "collar", "dying", "licenseC", "necklace", "pudding" ],
+            "time" : 1632792400277,
+            "totalscore" : 11
+          },
+          "cae811fb044280b17d0c68809f066b0d7891477f" : {
+            "extremecount" : 4,
+            "fightcount" : 1,
+            "item" : [ "basementkey", "chocolate", "collar", "covid153", "licenseA", "stylus", "vrglasses" ],
+            "time" : 1632804284339,
+            "totalscore" : 15
+          },
+          "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9" : {
+            "extremecount" : 1,
+            "fightcount" : 1,
+            "item" : [ "covid153", "dying", "licenseD", "tetrapods" ],
+            "time" : 1632804805377,
+            "totalscore" : 9
+          },
+          "f63a87b5afa3f5103cfe56ad564434ff3ede6193" : {
+            "extremecount" : 0,
+            "fightcount" : 1,
+            "item" : [ "panadol", "dying" ],
+            "time" : 1632804723958,
+            "totalscore" : 2
+          }
+        },
+        "photo" : {
+          "086f0d510bcf945077fcfe0c06cf7d3056b0803b" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "cae811fb044280b17d0c68809f066b0d7891477f",
+            "level" : 2,
+            "time" : 1632801750836
+          },
+          "0a55988911462c69a9460cc0c85569c9ba6fdc42" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "cae811fb044280b17d0c68809f066b0d7891477f",
+            "time" : 1632802815133
+          },
+          "22d9d60e8521b9a26c7d745dede9a04017f2c6cb" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "54014a160e4d778db2079b4b49d63a3feaf50e34",
+            "level" : 2,
+            "time" : 1632801170157
+          },
+          "314d81506552f82b10915bddca4ff7704a687c77" : {
+            "box" : {
+              "Mostima" : 1
+            },
+            "fightID" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+            "level" : 2,
+            "time" : 1632792080152
+          },
+          "46a4cdf5c8741f0d003cd7d89da7d06109115e70" : {
+            "box" : {
+              "Gravel" : 1,
+              "Guardamiya" : 1,
+              "Mayer" : 1,
+              "Platinum" : 1,
+              "Steward" : 1,
+              "Texas" : 2
+            },
+            "fightID" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+            "level" : 2,
+            "time" : 1632804789395
+          },
+          "511b0a21a16dbb1c30459b691d70faabc78af682" : {
+            "box" : {
+              "Mostima" : 1,
+              "Skadi" : 1
+            },
+            "fightID" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+            "level" : 5,
+            "time" : 1632792294708
+          },
+          "535fbddede4c2c1d49484e77856c901192e8e1e0" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "cae811fb044280b17d0c68809f066b0d7891477f",
+            "level" : 5,
+            "time" : 1632802639049
+          },
+          "5487687389b06a802bea387c8417ea26e9efe67d" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "cae811fb044280b17d0c68809f066b0d7891477f",
+            "level" : 3,
+            "time" : 1632802598492
+          },
+          "677ec59f1b197edb22a893300eaae590ea7db95c" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "7894a2d9600ff5ec7fd75f4f1a0e6841a426d416",
+            "level" : 2,
+            "time" : 1632801629677
+          },
+          "710280197b51140d8b8e72de6864760a581baf24" : {
+            "box" : {
+              "Mostima" : 1,
+              "Skadi" : 1
+            },
+            "fightID" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+            "level" : 4,
+            "time" : 1632792352047
+          },
+          "7d2f574148343817498c8af14a2b7d5d03a77775" : {
+            "box" : {
+              "Bagpipe" : 1,
+              "Eunectes" : 1,
+              "Spot" : 1,
+              "Steward" : 1,
+              "Texas" : 2,
+              "Utage" : 1
+            },
+            "fightID" : "45fb33e53c545a84e9813095057256f224eade8f",
+            "level" : 2,
+            "time" : 1632804375718
+          },
+          "9161b8700f77aaa06f0662d9fe4e2391497fe2fb" : {
+            "box" : {
+              "Gravel" : 1,
+              "Guardamiya" : 1,
+              "Mayer" : 1,
+              "Platinum" : 1,
+              "Steward" : 1,
+              "Texas" : 2
+            },
+            "fightID" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+            "level" : 2,
+            "time" : 1632804774017
+          },
+          "9c5121360d7338e9d4eb393d40895d923ea20c65" : {
+            "box" : {
+              "Jackie" : 1,
+              "Kroos" : 1,
+              "Nian" : 1,
+              "Sussurro" : 1,
+              "Suzuran" : 3
+            },
+            "fightID" : "83ce16cc12196526d1ec55b78a5e07cc78f78ef2",
+            "level" : 2,
+            "time" : 1632804842151
+          },
+          "b9bb65d96bd581172e09aad4a25efc74693eef47" : {
+            "box" : {
+              "Gravel" : 1,
+              "Guardamiya" : 1,
+              "Mayer" : 1,
+              "Platinum" : 1,
+              "Steward" : 1,
+              "Texas" : 2
+            },
+            "fightID" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+            "level" : 5,
+            "time" : 1632804798888
+          },
+          "c062ec0ac17db0f3c489077d1b2bbf5b7bfd4270" : {
+            "box" : {
+              "Exusiai" : 2,
+              "Guardamiya" : 2,
+              "Scene" : 1,
+              "Spot" : 1,
+              "Steward" : 1
+            },
+            "fightID" : "f63a87b5afa3f5103cfe56ad564434ff3ede6193",
+            "level" : 2,
+            "time" : 1632804704141
+          },
+          "e04ca289528eaef8791b1afc4eacdecead7e2bd0" : {
+            "box" : {
+              "Silverash" : 1
+            },
+            "fightID" : "4fecddb9ae7c55b4b158507d68c2c60b2b8481fd",
+            "level" : 2,
+            "time" : 1632804312208
+          },
+          "e312f6d1a04ec6e5a6666e689d47d412909ef09f" : {
+            "box" : {
+              "Texas" : 1
+            },
+            "fightID" : "cae811fb044280b17d0c68809f066b0d7891477f",
+            "level" : 5,
+            "time" : 1632802607389
+          }
+        }
+      },
+      "credit" : "sZplSNYsnGaVn4JT5PjH91OtPC63",
+      "fetch" : {
+        "collection" : {
+          "basementkey" : "cae811fb044280b17d0c68809f066b0d7891477f",
+          "brochure" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+          "chocolate" : "4fecddb9ae7c55b4b158507d68c2c60b2b8481fd",
+          "collar" : "cae811fb044280b17d0c68809f066b0d7891477f",
+          "covid153" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+          "dying" : "83ce16cc12196526d1ec55b78a5e07cc78f78ef2",
+          "licenseA" : "cae811fb044280b17d0c68809f066b0d7891477f",
+          "licenseC" : "83ce16cc12196526d1ec55b78a5e07cc78f78ef2",
+          "licenseD" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+          "necklace" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+          "panadol" : "f63a87b5afa3f5103cfe56ad564434ff3ede6193",
+          "pudding" : "acfb7639d86000e2a1055450f3a664aaa7c64d92",
+          "stylus" : "45fb33e53c545a84e9813095057256f224eade8f",
+          "tetrapods" : "d3f143c12c76cf25c3bdf02f8f0ec3e4c909acd9",
+          "vrglasses" : "cae811fb044280b17d0c68809f066b0d7891477f"
+        },
+        "score" : {
+          "escape" : 0,
+          "fightcount" : 17,
+          "finish" : 0,
+          "total" : 36
+        },
+        "state" : {
+          "carry" : "",
+          "coin" : 0,
+          "fightID" : "",
+          "hope" : 0,
+          "last_phase" : "",
+          "layer" : 1,
+          "layercount" : 0,
+          "phase" : "Lobby",
+          "photoID" : ""
+        }
+      },
+      "identifier" : "德諾索"
+    }
+  }
+}
