@@ -137,10 +137,12 @@ function Account(props){
 	}
 
 	const submit = () => {
+		console.log("email: " + email);
+		console.log("password: " + password);
+		console.log("nickname: " + nickname);
+		console.log("credit: " + code);
 		if(state === "login"){
-			const regex = /^[^[\]()\\<>:;,@.]+[^[\]()\\<>:;,@]*@[a-z0-9A-Z]+(([.]?[a-z0-9A-Z]+)*[-]*)*[.]([a-z0-9A-Z]+[-]*)+$/g;
-			setPassword(password.replace(/\s+/g, ""));
-			if(!regex.test(email) || password === "") window.alert("請將資訊填寫完整");
+			if(email === "" || password === "") window.alert("請將資訊填寫完整");
 			else{
 				login(email, password)
 				.then(() => {
@@ -150,9 +152,7 @@ function Account(props){
 			}
 		}
 		else if(state === "mkaccount"){
-			const regex = /^[^[\]()\\<>:;,@.]+[^[\]()\\<>:;,@]*@[a-z0-9A-Z]+(([.]?[a-z0-9A-Z]+)*[-]*)*[.]([a-z0-9A-Z]+[-]*)+$/g;
-			setPassword(password.replace(/\s+/g, ""));
-			if(!regex.test(email) || password === "") window.alert("請將資訊填寫完整");
+			if(email === "" || password === "") window.alert("請將資訊填寫完整");
 			else{
 				makeAccount(email, password)
 				.then(() => {
@@ -162,16 +162,14 @@ function Account(props){
 			}
 		}
 		else if(state === "credit"){
-			setCode(code.replace(/\s+/g, ""));
-			setNickname(nickname.replace(/\s+/g, ""));
 			if(code === "" || nickname === "") window.alert("請將資訊填寫完整");
 			else{
 				credit(code, nickname)
 				.then(() => {
 					setNickname("");
 					setCode("");
-					logout();
-					window.alert("驗證成功，請重新登入");
+					window.alert("驗證成功！");
+					window.location.reload();
 				})
 				.catch(() => window.alert("驗證碼錯誤"));
 			}
@@ -349,7 +347,7 @@ function Mission(props){
 		},
 		description: {
 			display: "inline-block",
-			width: "80%",
+			width: "100%",
 			verticalAlign: "middle",
 			"& p": {
 				position: "relative",
@@ -381,8 +379,7 @@ function Mission(props){
 
 	return(
 		<div className={classes.root}>
-			<div className={classes.image + " square"}>
-			</div><div className={classes.description}>
+			<div className={classes.description}>
 				<p>
 					{props.missionname}
 				</p>
@@ -405,7 +402,7 @@ function Medal(props){
 		image: {
 			display: "inline-block",
 			width: "20%",
-			backgroundImage: theme => theme.finish? "url(/img/medal/" + theme.medal + ".png)" : "url(/img/medal/nomedal.png)",
+			backgroundImage: theme => theme.finish? "url(/img/medal/" + theme.medal + theme.color + ".png)" : "url(/img/medal/nomedal.png)",
 			verticalAlign: "middle"
 		},
 		description: {
@@ -576,7 +573,7 @@ function List(props){
 		let mL = d.getter("medal");
 		Object.keys(medalList).forEach(m => {
 			output.push(
-				<Medal medal={m} finish={mL.includes(m)}/>
+				<Medal medal={m} finish={mL.includes(m)} color={mL.includes("medal8")? "_color" : ""}/>
 			);
 		});
 		return output;
@@ -623,18 +620,94 @@ function List(props){
 }
 
 function MedalGraph(props){
+	const generateMedalBG = (medal, num) => {
+		if(!medal.includes("medal" + num)) return "url(/img/medal/nomedal.png)";
+		if(!medal.includes("medal" + 8)) return "url(/img/medal/medal" + num + ".png)";
+		return "url(/img/medal/medal" + num + "_color.png)"
+	}
+
 	const classes = createUseStyles({
 		root: {
+			position: "relative",
 			width: "100%",
-			height: "100%",
 			marginTop: "10px",
-			backgroundImage: "url(/img/bg/lobby.png)",
+			backgroundImage: "url(/img/bg/medalBG.png)",
 			backgroundSize: "100% auto",
-			backgroundPosition: "top center"
+			backgroundPosition: "top center",
+			"&:before": {
+				display: "inline-block",
+				content: "''",
+				paddingTop: "35%"
+			}
+		},
+		medal1: {
+			position: "absolute",
+			width: "18%",
+			top: "50%",
+			left: "75%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 1)
+		},
+		medal2: {
+			position: "absolute",
+			width: "11.5%",
+			top: "17.84%",
+			left: "68.5%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 2)
+		},
+		medal3: {
+			position: "absolute",
+			width: "11.5%",
+			top: "50%",
+			left: "62%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 3)
+		},
+		medal4: {
+			position: "absolute",
+			width: "11.5%",
+			top: "82.16%",
+			left: "68.5%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 4)
+		},
+		medal5: {
+			position: "absolute",
+			width: "11.5%",
+			top: "82.16%",
+			left: "81.5%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 5)
+		},
+		medal6: {
+			position: "absolute",
+			width: "11.5%",
+			top: "50%",
+			left: "88%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 6)
+		},
+		medal7: {
+			position: "absolute",
+			width: "11.5%",
+			top: "17.84%",
+			left: "81.5%",
+			transform: "translate(-50%, -50%)",
+			backgroundImage: theme => generateMedalBG(theme.medal, 7)
 		}
-	})();
+	})({medal: d.getter("medal")});
 
 	const generateMedal = () => {
+		let output = [];
+		output.push(<div className={classes.medal1 + " square"}></div>);
+		output.push(<div className={classes.medal2 + " square"}></div>);
+		output.push(<div className={classes.medal3 + " square"}></div>);
+		output.push(<div className={classes.medal4 + " square"}></div>);
+		output.push(<div className={classes.medal5 + " square"}></div>);
+		output.push(<div className={classes.medal6 + " square"}></div>);
+		output.push(<div className={classes.medal7 + " square"}></div>);
+		return output;
 	}
 
 	return(
@@ -712,6 +785,7 @@ function Record(props){
 			<div className={classes.block}>
 				<Doctor/>
 				<MedalGraph/>
+				<div>此網頁所有事物僅供學術研究用途，請勿私自取用供商業用途<br/>若有侵權請告知，本網站會立即關閉<br/>dernoson@gmail.com</div>
 				<button className={classes.logout} onClick={() => logout().then(props.back)}>登出</button>
 			</div><div className={classes.block}>
 				<List/>
@@ -755,7 +829,7 @@ function FirstSelect(props){
 		for(let i = 0; i < props.tickets.length; i++){
 			output.push(
 				<Item
-					width={"17%"}
+					width={"15%"}
 					item={props.tickets[i][0]}
 					state={props.tickets[i][1]? "exhibit" : "sold"}
 					clickFunc={() => props.response(i)}
@@ -925,12 +999,7 @@ function Lobby(props){
 	const [difficulty, setDifficulty] = useState("easy");
 
 	useEffect(() => {
-		if(!props.show){
-			setState("lobby");
-			setSelectcarry(false);
-			setDifficulty("easy");
-		}
-		else if(props.user === null || !props.credit) setState("account");
+		if(props.user === null || !props.credit) setState("account");
 		else if(props.content.length !== 0) setState("firstselect");
 		else setState("lobby");
 	}, [props]);
@@ -1033,6 +1102,7 @@ function Lobby(props){
 
 	const start = () => {
 		const arr = Object.keys(d.getter("col"));
+		console.log(arr);
 		if(d.getter("flag").carryFlag && arr.length !== 0) setSelectcarry(true);
 		props.response(difficulty);
 	}

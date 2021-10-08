@@ -9,7 +9,7 @@ function Shop(props){
 
 	const judgeState = (selection, coin, content) => {
 		if(selection === 0) return false;
-		if(coin < content[selection-1][1]) return false;
+		if(content && content[selection-1] && coin < content[selection-1][1]) return false;
 		return true;
 	}
 
@@ -206,15 +206,15 @@ function Shop(props){
 	const generateDescription = () => {
 		let output = [];
 		if(props.content[0] === "fight"){
-			switch(props.layer){
+			switch(d.getter("state").layer){
 				case 2:
-					output.push("");
+					output.push("好久不見阿！讓我們繼續之前中門對狙的對決吧！如果你挑戰成功了，商店的東西任你拿！");
 					break;
 				case 3: 
-					output.push("");
+					output.push("博士，許久未見，讓我來測測你現在的指揮能力吧。如果你挑戰成功了，商店的東西任你拿！");
 					break;
 				case 4:
-					output.push("");
+					output.push("想娶我女兒，先過我這關！如果你挑戰成功了，商店的東西任你拿！");
 					break;
 				default: 
 					output.push("");
@@ -224,7 +224,7 @@ function Shop(props){
 		else if(selection === 0){
 			switch(d.getter("state").layer){
 				case 2:
-					output.push("哼！怎麼會在這遇到你，買完東西就快滾吧！");
+					output.push("這裡十分危險，買完東西就快離開！");
 					break;
 				case 3: 
 					output.push("我一直都在你們身邊，休息一下，帶走自己所需的吧。");

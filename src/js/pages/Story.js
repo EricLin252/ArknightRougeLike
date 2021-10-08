@@ -64,7 +64,7 @@ function Ticket(props){
 
 function Story(props){
 	useEffect(() => {
-		if(props.show) props.returnStoryname(props.content[1].split("$")[0]);
+		if(props.show) props.returnStoryname(String(props.content[1]).split("$")[0]);
 	}, [props]);
 
 	const classes = createUseStyles({
@@ -132,9 +132,9 @@ function Story(props){
 	})();
 
 	const generateStory = () => {
-		const origin = props.content[1].split("$")[1];
+		const origin = String(props.content[1]).split("$")[1];
 		let output = [];
-		const text = origin.split("@");
+		const text = origin? origin.split("@") : [];
 		text.forEach(el => {
 			if(output.length !== 0) output.push(<br/>);
 			output.push(el);
@@ -144,7 +144,7 @@ function Story(props){
 
 	const generateSelection = () => {
 		let output = [];
-		let content = props.content[1].split("$");
+		let content = String(props.content[1]).split("$");
 		for(let i = 2; i < content.length; i++){
 			if(content[i][0] === "H"){
 				let amt = parseInt(content[i].slice(1), 10);

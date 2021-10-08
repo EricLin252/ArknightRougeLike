@@ -1,11 +1,10 @@
-import {get} from './backend';
+import {get, push} from './backend';
 import {clone} from './functions';
-import {medalList} from './dict';
 
 var identifier = "", state = {}, box = {}, item = {}, pool = [],
 score = {}, collection = {}, mission = [], medal = [], backup = {}, flag = {};
 
-const newdb = {
+const newdb = reload => ({
 	state: {
 		phase: "Lobby",
 		buffer: [],
@@ -24,8 +23,9 @@ const newdb = {
 		finish: 0,
 		fightcount: 0,
 		escape: 0
-	}
-};
+	},
+	reload: reload
+});
 
 const state0 = setter => ({
 	phase: clone(setter.phase, "Lobby"),
@@ -48,23 +48,35 @@ const getMission = () => {
 				}
 			});
 			mission = clone(m, {});
+			return new Promise(resolve => resolve());
 		});
 }
 
 const getFlag = () => {
-	return get("global/flag").then(d => setter("flag", d));
+	return get("global/flag")
+		.then(d => {
+			setter("flag", d);
+			return new Promise(resolve => resolve());
+		});
 }
 
 const getBackup = user => {
 	if(state.fightID !== ""){
 		return get("users/" + user.uid + "/backup/fight/" + state.fightID)
-			.then(d => setter("backup", d));
+			.then(d => {
+				setter("backup", d);
+				return new Promise(resolve => resolve());
+			});
 	}
 	else return new Promise(resolve => resolve());
 }
 
 const getID = user => {
-	return get("users/" + user.uid + "/identifier").then(d => setter("id", d));
+	return get("users/" + user.uid + "/identifier")
+		.then(d => {
+			setter("id", d);
+			return new Promise(resolve => resolve());
+		});
 }
 
 const init = filter => {
@@ -160,7 +172,6 @@ const setter = (filter, d) => {
 		case "flag":	ptr = flag; break;
 		default:		break;
 	}
-
 	if(filter === "id"){
 		identifier = d;
 		return;
@@ -170,12 +181,10 @@ const setter = (filter, d) => {
 		return;
 	}
 
-	Object.keys(d).forEach(el => {
-		ptr[el] = clone(d[el], "");
-	});
+	Object.keys(d).forEach(el => ptr[el] = clone(d[el], ""));
 }
 
-const update = (user, userData) => {
+const update = (user, userData, reload) => {
 	init();
 	setter("state", userData.state);
 	box = clone(userData.box, {});
@@ -186,15 +195,16 @@ const update = (user, userData) => {
 	mission = clone(userData.mission, []);
 	medal = clone(userData.medal, []);
 
-	if(state["phase"] !== null || state["phase"] !== undefined) delete state["phase"];
-	if(state["buffer"] !== null || state["buffer"] !== undefined) delete state["buffer"];
-	if(state["hope"] !== null || state["hope"] !== undefined) delete state["hope"];
-	if(state["coin"] !== null || state["coin"] !== undefined) delete state["coin"];
+	if("phase" in state) delete state["phase"];
+	if("buffer" in state) delete state["buffer"];
+	if("hope" in state) delete state["hope"];
+	if("coin" in state) delete state["coin"];
 
 	return getMission()
-		.then(() => {return getFlag();})
-		.then(() => {return getBackup(user);})
-		.then(() => {return getID(user);})
+		.then(() => getFlag())
+		.then(() => getBackup(user))
+		.then(() => getID(user))
+		.then(() => push("users/" + user.uid + "/fetch/reload", reload))
 		.catch(err => console.log("Data update: " + err));
 }
 
@@ -215,6 +225,35 @@ const getter = filter => {
 	}
 }
 
+const del = (filter, key) => {
+	let ptr;
+	switch(filter){
+		case "id":		ptr = identifier; break;
+		case "state":	ptr = state; break;
+		case "score":	ptr = score; break;
+		case "box":		ptr = box; break;
+		case "item":	ptr = item; break;
+		case "pool":	ptr = pool; break;
+		case "col":		ptr = collection; break;
+		case "mission":	ptr = mission; break;
+		case "medal":	ptr = medal; break;
+		case "backup":	ptr = backup; break;
+		case "flag":	ptr = flag; break;
+		default:		break;
+	}
+
+	if(filter === "id"){
+		identifier = "";
+		return;
+	}
+	else if(filter === "pool" || filter === "medal"){
+		if(ptr.includes(key)) ptr.splice(ptr.indexOf(key), 1);
+		return;
+	}
+
+	if(key in ptr) delete ptr[key];
+}
+
 const tester = filter => {
 	switch(filter){
 		case "id":		console.log(clone(identifier, "")); break;
@@ -232,5 +271,5 @@ const tester = filter => {
 	}
 }
 
-const db = {newdb, state0, getMission, getFlag, update, getter, setter, tester, init};
+const db = {newdb, state0, getMission, getFlag, update, getter, setter, tester, init, del};
 export default db;

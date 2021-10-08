@@ -53,7 +53,7 @@ function Mission(props){
 		},
 		image: {
 			width: "100%",
-			backgroundImage: theme => "url(/img/mission/" + theme.mission[0] + ".png)"
+			backgroundImage: "url(/img/mission/mission.png)"
 		}
 	})(props);
 

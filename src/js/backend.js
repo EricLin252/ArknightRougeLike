@@ -1,4 +1,3 @@
-import d from './data';
 import {clone} from './functions';
 import {initializeApp} from 'firebase/app';
 import {getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword} from "firebase/auth";
@@ -70,11 +69,7 @@ const get = path => {
 }
 
 const push = (path, data) => {
-	return new Promise((resolve, reject) => {
-		set(ref(db, path), data)
-		.then(() => resolve())
-		.catch(err => reject(err));
-	});
+	return set(ref(db, path), data);
 }
 
 const send = (data, fightID = "", photoID = "") => {

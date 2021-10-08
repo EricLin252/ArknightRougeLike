@@ -307,7 +307,7 @@ function SelectRole(props){
 				cost={cost}
 				hope={props.hope}
 				coin={props.coin}
-				comfirm={() => {props.response(selection); setSelection("");}}
+				comfirm={() => {props.response(selection); setSelection(""); setOpening(6);}}
 				cancel={() => setSelection("")}
 			/>
 		</div>

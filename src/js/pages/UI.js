@@ -130,7 +130,7 @@ function Mission(props){
 		},
 		description: {
 			display: "inline-block",
-			width: "90%",
+			width: "100%",
 			verticalAlign: "middle",
 			"& p": {
 				position: "relative",
@@ -177,8 +177,7 @@ function Mission(props){
 
 	return(
 		<div className={classes.root}>
-			<div className={classes.image + " square"}>
-			</div><div className={classes.description}>
+			<div className={classes.description}>
 				<p>
 					{props.missionname}
 				</p>

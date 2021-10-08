@@ -24,7 +24,6 @@ import reportWebVitals from './js/reportWebVitals';
 import './css/index.css';
 import './css/default.css';
 
-
 function Sys(props){
 	const [state, setState] = useState(d.state0({}));
 	const [storyname, setStoryname] = useState("不期而遇");
@@ -35,30 +34,32 @@ function Sys(props){
 	useEffect(() => {
 		if(user){
 			get("users/" + user.uid + "/fetch")
+			.then(fetch => get("global/reload").then(reload => new Promise(resolve => resolve({fetch: fetch, reload: reload}))))
 			.then(re => {
-				if(re){
+				if(re.fetch){
 					console.log("登入成功，讀取資料成功");
-					d.update(user, re)
+					d.update(user, re.fetch, re.reload)
 					.then(() => {
-						setState(d.state0(re.state));
+						setState(d.state0(re.fetch.state));
 						setCredit(true);
+						setPosting(false);
 					})
 					.catch(err => console.log(err));
 				}
 				else{
 					console.log("登入成功，新建資料");
-					push("users/" + user.uid + "/fetch", d.newdb)
+					push("users/" + user.uid + "/fetch", d.newdb(re.reload))
 					.then(() => {
 						d.init();
 						get("users/" + user.uid + "/identifier").then(id => {
 							d.setter("id", id);
 							setState(d.state0({}));
 							setCredit(true);
+							setPosting(false);
 						});
 					})
 					.catch(err => console.log("新創資料庫：" + err));
 				}
-				setPosting(false);
 			})
 			.catch(() => {
 				console.log("登入成功，尚未輸入驗證碼");
@@ -86,7 +87,15 @@ function Sys(props){
 
 	const post = ans => {
 		setPosting(true);
-		n.submit(state, ans)
+		get("global/reload").then(gRe => get("users/" + user.uid + "/fetch/reload").then(lRe => new Promise(resolve => resolve(gRe !== lRe))))
+		.then(reload => {
+			if(reload){
+				window.location.reload();
+				return new Promise((resolve, reject) => reject());
+			}
+			else return new Promise(resolve => resolve());
+		})
+		.then(() => n.submit(state, ans))
 		.then(re => {
 			setPart(re);
 			setPosting(false);
@@ -160,6 +169,7 @@ function Sys(props){
 
 	return(<>
 		{(loading || posting) && <div className={classes.loading}><div></div><span>loading...</span></div>}
+		<div className="orientation"><span>請將畫面放橫</span></div>
 		<div className={classes.root}>
 			<Lobby
 				show={state.phase === "Lobby"}
