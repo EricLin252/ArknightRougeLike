@@ -170,6 +170,7 @@ function Sys(props){
 	return(<>
 		{(loading || posting) && <div className={classes.loading}><div></div><span>loading...</span></div>}
 		<div className="orientation"><span>請將畫面放橫</span></div>
+		<div className="bye"><span>我們鉛封行動再會</span></div>
 		<div className={classes.root}>
 			<Lobby
 				show={state.phase === "Lobby"}
